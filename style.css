@@ -1,0 +1,121 @@
+body {
+  font-family: Arial, sans-serif;
+  color: #dddddd;
+  font-size: 120%;
+}
+
+#container {
+  max-width: 400px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#board {
+  width: 100%;
+}
+
+#board > div {
+  box-sizing: border-box;
+  float: left;
+  width: 33%;
+  padding-bottom: 32.34%;
+  border: 1px solid black;
+  position: relative;
+}
+
+#board > .top-edge {
+  border-top: none;
+  border-bottom-width: 3px;
+}
+
+#board > .left-edge {
+  border-left: none;
+  border-right-width: 3px;
+}
+
+#board > .bottom-edge {
+  border-bottom: none;
+  border-top-width: 3px;
+}
+
+#board > .right-edge {
+  border-right: none;
+  border-left-width: 3px;
+}
+
+.o:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto;
+  width: 40%;
+  height: 40%;
+  border: 7px solid black;
+  border-radius: 100%;
+}
+
+.x:before, .x:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto;
+  width: 7px;
+  height: 60%;
+  background: black;
+  border-radius: 3px;
+  transform: rotate(45deg);
+}
+
+.x:after {
+  transform: rotate(-45deg);
+}
+
+.o.empty:after {
+  border-color: #f1f1f1;
+}
+
+.x.empty:before, .x.empty:after {
+  background: #f1f1f1;
+}
+
+.o.three-in-a-row:after {
+  border-color: red;
+}
+
+.x.three-in-a-row:before, .x.three-in-a-row:after {
+  background: red;
+}
+
+#undo {
+  float: right;
+  display: none;
+}
+
+#undo.active {
+  display: block;
+}
+
+.control {
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 15px;
+}
+
+.control:hover, #message {
+  color: gray;
+}
+
+#top-controls {
+  text-align: center;
+  margin: 10px 0 30px;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
